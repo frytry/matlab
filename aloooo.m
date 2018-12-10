@@ -2,7 +2,6 @@
 % ip=input(prompt);
 % prompt = 'ic=';
 % ic=input(prompt);
-ip=[67 65 69; 71 65 62; 80 12 10];
 ic=ip(2,2);
 prompt = 't1=';
 t1=input(prompt);
