@@ -1,0 +1,39 @@
+addpath('D:\7 sem comb\Documents\project\sir\DR1\FCJF0');
+fid=fopen('SA1.PHN');
+mc=textscan(fid,'%f %f %s');
+%patterns
+% p4_a='a';
+% p4_e='e';
+% p4_i='i';
+% p4_o='o';
+% p4_u='u';
+%strfind(mc{3}(2), 's')
+sm=[];
+k=[];
+count=0;
+sz=size(mc{3});
+run_point=sz(1,1);
+%k(run_point)=0;
+for m=1:run_point
+    v_a=strfind(mc{3}(m), 'a');
+    v_e=strfind(mc{3}(m), 'e');
+    v_i=strfind(mc{3}(m), 'i');
+    v_o=strfind(mc{3}(m), 'o'); 
+    v_u=strfind(mc{3}(m), 'u');
+    tf_a = any(vertcat(v_a{:}));
+    tf_e = any(vertcat(v_e{:}));
+    tf_i = any(vertcat(v_i{:}));
+    tf_o = any(vertcat(v_o{:}));
+    tf_u = any(vertcat(v_u{:}));
+    k(m)=tf_a+tf_e+tf_i+tf_o+tf_u;
+    disp(k(m));
+    if k(m)>=1
+        count=count+1;
+        sm(count,1)=mc{1}(m);
+        sm(count,2)=mc{2}(m);
+        disp(mc{1}(m));
+        disp(mc{2}(m));
+    end
+    
+end
+disp(count);
