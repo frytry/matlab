@@ -1,0 +1,13 @@
+
+[d11,d12]=size(data);
+[daa,dbb]=size(sm);
+x=0:0.1:d11;
+hold on;
+for abc=1:daa
+i=sm(abc,1);         %starting 
+b1 = sm(abc,2)-i;   %ending
+a1 = 0.13;
+f = @(xi,a,b) a*rectpuls(xi,b); 
+ plot(x,f((x-i)-((b1/2)),a1,b1),'Color',[1 0 0]);
+end
+hold off;
