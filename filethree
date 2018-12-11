@@ -49,13 +49,18 @@ jmM=[];
 for j=1:Svs
     for i=1:sma
     jM(i)=smA(i)-Sv(j);
+    jM(i)=jM(i)*jM(i);
     jM(i)=sqrt(jM(i));
     end
 jmM(j)=min(jM);
 end
+
 disp('Summary');
 disp('=======');
 disp(' ');
+disp('Distance between fasles');
+disp(jmM');
+
 str=sprintf('Total detected vowels =%d',DV);
 disp(str);
 RV=size(sm);
